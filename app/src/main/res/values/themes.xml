@@ -4,5 +4,6 @@
     <style name="Theme.AYUSHStartupHub" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="colorPrimary">#9d4edd</item>
         <item name="colorSecondary">#ffafcc</item>
+        <item name="android:statusBarColor">#E27CF4</item>
     </style>
 </resources>
