@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Transition
+    xmlns:motion="http://schemas.android.com/aapt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    motion:constraintSetStart="@+id/start"
+    motion:constraintSetEnd="@+id/previous"
+    android:id="@+id/backward">
+    <OnSwipe
+        motion:dragDirection="dragRight"
+        motion:touchAnchorSide="right" />
+</Transition>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transition motion:constraintSetStart="@id/start"
+    motion:constraintSetEnd="@+id/next"
+    motion:duration="100"
+    android:id="@+id/forward"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <OnSwipe
+        motion:dragDirection="dragLeft"
+        motion:touchAnchorSide="left" />
+</Transition>

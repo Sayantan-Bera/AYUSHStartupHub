@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/eachMainItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_height="220dp"
+    android:background="@drawable/each_item_bg"
+    >
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/itemImage"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_margin="18dp"
+        android:src="@drawable/g20logo"
+
+
+
+app:riv_corner_radius="30dp"
+
+        app:riv_mutate_background="true"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/topicTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="1dp"
+        android:lines="2"
+        android:paddingStart="10dp"
+        android:text="Homiopathy "
+android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toEndOf="@+id/itemImage"
+        app:layout_constraintTop_toTopOf="@+id/itemImage"
+        app:layout_constraintVertical_bias="0.296" />
+
+    <TextView
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="9dp"
+        android:textColor="#81000000"
+        android:textStyle="italic"
+        android:textSize="18dp"
+        android:gravity="top"
+
+        android:text="redtfyguhidsdffghjkhdgd gsdfghjkh ihiuytrshdyjfgb goherisgiueigfsuyegieiugiuerguheihguihesrilghdbivbie gerihgie igeei geiurgheri girgg ieghg iuhirghiehrsiogigier gesigiuerig isdgiusei ig iuegus igdsig kgiegi ig kufgerksg rygiegigfigrfie sgfligerig gui grieis gigrgsegikigesi fg ig igerigeriu igrigfig fiergigfi "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemImage"
+        app:layout_constraintTop_toBottomOf="@+id/topicTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>
