@@ -13,23 +13,24 @@
         android:theme="@style/Theme.AYUSHStartupHub"
         tools:targetApi="31">
         <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AYUSHStartupHub">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AYUSHStartupHub">
-
-        </activity>
+            android:theme="@style/Theme.AYUSHStartupHub"></activity>
     </application>
 
 </manifest>

@@ -56,4 +56,7 @@ class HomeFragment : Fragment() {
         val adapter = Topic_list_adapter(list, requireContext())
         mainBinding.recyclerView.setAdapter(adapter)
     }
+
 }
+
+
