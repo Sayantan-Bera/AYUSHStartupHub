@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Login"
+    tools:context=".ProfileFragment"
      android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -114,32 +114,12 @@ android:id="@+id/nameTextInput"
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/role"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:hint="Role"
-                    android:textColorHint="#494444"
-                    android:visibility="visible"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxStrokeColor="@color/teal_200"
-                    app:hintEnabled="true"
-                    app:hintTextColor="@color/black">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTint="@color/black"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/black"
-                        android:id="@+id/roleText"
-                        android:textSize="18dp"
 
-                        />
 
-                </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -192,7 +172,14 @@ android:id="@+id/nameTextInput"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
 
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="50dp"

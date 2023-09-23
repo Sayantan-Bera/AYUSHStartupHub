@@ -6,6 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.SpinnerAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.compose.ui.graphics.Color
@@ -56,10 +60,10 @@ class ProfileFragment : Fragment() {
 
        getPageStatus(binding)
         setPageStatus(binding)
+        getSpinner(binding)
         binding.enterBtn.setOnClickListener(View.OnClickListener { view -> checkdata(binding) })
 
     }
-
     private fun checkdata(binding: FragmentProfileBinding) {
 
         if(status){
@@ -80,16 +84,17 @@ class ProfileFragment : Fragment() {
                 binding.nameTextInput.setError("Fill Name")
                 return
             }
-            else if(TextUtils.isEmpty(binding.roleText.text.toString())){
-                binding.roleText.setError("Fill Role")
-                return
-            } else if(TextUtils.isEmpty(binding.emailText.text.toString())){
+          else if(TextUtils.isEmpty(binding.emailText.text.toString())){
                 binding.emailText.setError("Fill Email")
                 return
             }
             else if(TextUtils.isEmpty(binding.passText.text.toString())){
                 binding.passText.setError("Fill Password")
                 return
+            }
+            else if(binding.Spinner.selectedItem.toString()=="--Select--"){
+
+                Toast.makeText(requireContext(),"Select Role ",Toast.LENGTH_SHORT).show()
             }
             else{
                 Toast.makeText(requireContext(),"Successfully given",Toast.LENGTH_SHORT).show()
@@ -101,7 +106,7 @@ class ProfileFragment : Fragment() {
     private fun setPageStatus(binding: FragmentProfileBinding) {
 
         binding.pageStatus.setOnClickListener(View.OnClickListener {
-            view ->
+                view ->
             if(status==true) {
                 status = false;
                 getPageStatus(binding)
@@ -115,7 +120,7 @@ class ProfileFragment : Fragment() {
         if(status==true){
             binding.nameText.visibility=View.GONE
             binding.pageStatus.setText("Don't have account")
-            binding.role.visibility=View.GONE
+            binding.Spinner.visibility=View.GONE
             binding.toptext.setText("LOGIN")
 
             val colorValue1 = ContextCompat.getColor(requireContext(), R.color.white)
@@ -128,7 +133,7 @@ class ProfileFragment : Fragment() {
         }else{
             binding.nameText.visibility=View.VISIBLE
             binding.pageStatus.setText("Already have account")
-            binding.role.visibility=View.VISIBLE
+            binding.Spinner.visibility=View.VISIBLE
             binding.toptext.setText("SIGNUP")
             val colorValue = ContextCompat.getColor(requireContext(), R.color.statustheme)
 
@@ -140,7 +145,23 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    private fun getSpinner(binding: FragmentProfileBinding) {
 
+        val adapter = ArrayAdapter.createFromResource(requireContext(),
+           R.array.role_list, android.R.layout.simple_spinner_item)
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(
+            android.R.layout.simple_spinner_dropdown_item)
+        // Apply the adapter to the spinner
+        binding.Spinner.adapter = adapter
+
+
+    }
 }
+
+
+
+
+
 
 
