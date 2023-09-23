@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         mainBinding=FragmentHomeBinding.inflate(layoutInflater)
-        getListners(mainBinding);
+        getListners(mainBinding)
         return mainBinding.root
     }
 
