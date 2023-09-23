@@ -27,8 +27,8 @@ class HomeActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
-                R.id.homeFragment -> curPos = 0
-                R.id.profileFragment -> curPos = 1
+                R.id.fragmentLogin -> curPos = 0
+                R.id.fragmentLogin -> curPos = 1
             }
         }
     }
@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
         if(curPos==0){
             finish()
         }else{
-            navController.navigate(R.id.homeFragment)
+            navController.navigate(R.id.fragmentLogin)
 //         Toast.makeText(this,"curPos $curPos", Toast.LENGTH_LONG).show()
         }
     }

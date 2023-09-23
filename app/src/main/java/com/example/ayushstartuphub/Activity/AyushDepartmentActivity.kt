@@ -1,5 +1,6 @@
 package com.example.ayushstartuphub.Activity
 
+
 import adapters.TabsAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,7 +20,7 @@ class AyushDepartmentActivity : AppCompatActivity() {
         val image=intent.getIntExtra("image",R.drawable.homeopathy)
         binding.departmentName.setText(name)
         binding.itemImage.setImageResource(image)
-        binding.fragmentHolder.adapter=TabsAdapter(supportFragmentManager, lifecycle)
+        binding.fragmentHolder.adapter= TabsAdapter(supportFragmentManager, lifecycle)
         TabLayoutMediator(binding.topTabs,binding.fragmentHolder){
              tab,position->tab.text=tabTitle[position]
         }.attach()

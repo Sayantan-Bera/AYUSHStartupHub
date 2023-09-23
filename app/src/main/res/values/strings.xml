@@ -7,4 +7,13 @@
     <string name="startups">Startups</string>
     <string name="investors">Investors</string>
     <string name="mentors">Mentors</string>
+    <string-array name="role_list">
+        <item>--Select--</item>
+        <item>Startup</item>
+        <item>Investor</item>
+        <item>Mentor</item>
+        <item>Incubator</item>
+        <item>Govt agency</item>
+
+    </string-array>
 </resources>

@@ -20,7 +20,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         mainBinding=FragmentHomeBinding.inflate(layoutInflater)
-        getListners(mainBinding);
+        getListners(mainBinding)
         return mainBinding.root
     }
 
@@ -46,4 +46,7 @@ class HomeFragment : Fragment() {
         val adapter = Topic_list_adapter(list, requireContext())
         mainBinding.recyclerView.setAdapter(adapter)
     }
+
 }
+
+
