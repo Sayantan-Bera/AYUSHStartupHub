@@ -3,11 +3,22 @@ package com.example.ayushstartuphub.Activity
 import Models.Message
 import adapters.ChatAdapter
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.coroutines.Dispatchers.Default
 import android.util.Log
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalView
+import androidx.core.content.ContextCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import com.example.ayushstartuphub.HomeActivity
 import com.example.ayushstartuphub.R
 
 import com.example.ayushstartuphub.databinding.ActivityChatbotBinding
@@ -39,12 +50,22 @@ private lateinit var binding: ActivityChatbotBinding
         super.onCreate(savedInstanceState)
         binding=ActivityChatbotBinding.inflate(layoutInflater)
         setContentView(binding.root)
-Log.d(TAG,"created")
-        //setting adapter to recyclerview
+        initMethod(binding)
+        getListner(binding)
+
+    }
+
+    private fun initMethod(binding: ActivityChatbotBinding) {
+
         chatAdapter = ChatAdapter(this, messageList)
         binding.chatView.adapter = chatAdapter
 
-        //onclick listener to update the list and call dialogflow
+        //status bar color
+        changeStatusBarColor(ContextCompat.getColor(this,R.color.statustheme300), true)
+        setUpBot()
+    }
+
+    private fun getListner(binding: ActivityChatbotBinding) {
         binding.btnSend.setOnClickListener {
             val message: String = binding.editMessage.text.toString()
             if (message.isNotEmpty()) {
@@ -55,9 +76,20 @@ Log.d(TAG,"created")
                 Toast.makeText(this, "Please enter text!", Toast.LENGTH_SHORT).show()
             }
         }
+     binding.backbtn.setOnClickListener(View.OnClickListener { view ->
 
-        //initialize bot config
-        setUpBot()
+         val intent = Intent(this, HomeActivity::class.java)
+         intent.flags = FLAG_ACTIVITY_NEW_TASK
+         intent.flags += FLAG_ACTIVITY_CLEAR_TASK
+         startActivity(intent)
+     })
+    }
+
+    fun Activity.changeStatusBarColor(color: Int, isLight: Boolean) {
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = color
+
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = isLight
     }
 
     @SuppressLint("NotifyDataSetChanged")
