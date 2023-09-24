@@ -1,5 +1,6 @@
 package com.example.ayushstartuphub
 
+
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -52,6 +53,8 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding=FragmentProfileBinding.inflate(layoutInflater)
      getListeners(binding)
+
+
         return binding.root
     }
 
