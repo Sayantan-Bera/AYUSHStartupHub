@@ -4,15 +4,18 @@
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="gray">#F56C7070</color>
+
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="f_buttoncolor">#FFD3C9</color>
     <color name="statustheme">#E27CF4</color>
+    <color name="toolbarcolor">#EEDFC7C7</color>
     <color name="statustheme100">#66C064D0</color>
-
+    <color name="statustheme300">#FFEBEB</color>
     <color name="colorPrimary">#9d4edd</color>
-
-
+    <color name="msgreceive">#C8FDE5EC</color>
+    <color name="msgsend">#FAE4BF</color>
     <color name="itembgcolor">#91E3E3E3</color>
 </resources>

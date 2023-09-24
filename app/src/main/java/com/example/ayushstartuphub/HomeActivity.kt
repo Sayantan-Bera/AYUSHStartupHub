@@ -1,7 +1,9 @@
 package com.example.ayushstartuphub
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -10,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.ayushstartuphub.Activity.Chatbot
 import com.example.ayushstartuphub.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -31,6 +34,18 @@ class HomeActivity : AppCompatActivity() {
                 R.id.fragmentLogin -> curPos = 1
             }
         }
+        getListner(binding)
+          }
+
+    private fun getListner(binding: ActivityHomeBinding) {
+
+        binding.botButton.setOnClickListener(View.OnClickListener { view ->
+            val intent = Intent(this, Chatbot::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+
+            startActivity(intent)
+        })
+
     }
 
     override fun onBackPressed() {
